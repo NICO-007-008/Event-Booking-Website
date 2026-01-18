@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Bookings - EventHub</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="bi bi-calendar-event me-2"></i>EventHub
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="events.html">Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="my-bookings.html">My Bookings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin.html">Admin</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container py-5 mt-4">
+        <div class="row">
+            <div class="col">
+                <h1 class="fw-bold mb-4">My Bookings</h1>
+                
+                <div id="bookingsContainer">
+                    <!-- Bookings will be loaded here by JavaScript -->
+                    <div class="spinner-container">
+                        <div class="spinner-border text-primary" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-5">
+                    <h3 class="fw-bold mb-3">Need Help?</h3>
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="bi bi-question-circle text-primary me-2"></i>Booking Assistance</h5>
+                            <p class="card-text">If you have any questions about your bookings or need to make changes, please contact our support team.</p>
+                            <a href="#" class="btn btn-outline-primary">Contact Support</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Receipt Modal -->
+    <div class="modal fade" id="receiptModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Booking Receipt</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" id="receiptContent">
+                    <!-- Receipt content will be loaded here -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="downloadReceiptBtn">
+                        <i class="bi bi-download me-1"></i>Download PDF
+                    </button>
+                    <button type="button" class="btn btn-success" id="emailReceiptBtn">
+                        <i class="bi bi-envelope me-1"></i>Email Receipt
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <h5 class="fw-bold">EventHub</h5>
+                    <p>Your gateway to amazing experiences and unforgettable memories.</p>
+                </div>
+                <div class="col-md-2 mb-3">
+                    <h5 class="fw-bold">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white text-decoration-none">Home</a></li>
+                        <li><a href="events.html" class="text-white text-decoration-none">Events</a></li>
+                        <li><a href="my-bookings.html" class="text-white text-decoration-none">My Bookings</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <h5 class="fw-bold">Support</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white text-decoration-none">Help Center</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Contact Us</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <h5 class="fw-bold">Payment Methods</h5>
+                    <div class="d-flex flex-wrap">
+                        <span class="badge bg-light text-dark me-2 mb-2">Credit Card</span>
+                        <span class="badge bg-light text-dark me-2 mb-2">Debit Card</span>
+                        <span class="badge bg-light text-dark me-2 mb-2">GCash</span>
+                        <span class="badge bg-light text-dark me-2 mb-2">PayMaya</span>
+                        <span class="badge bg-light text-dark me-2 mb-2">PayPal</span>
+                    </div>
+                </div>
+            </div>
+            <hr class="bg-light">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2023 EventHub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+    <script>
+        // My Bookings specific JavaScript
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if user is logged in
+            if (!requireAuth()) return;
+            
+            loadUserBookings();
+        });
+        
+        function loadUserBookings() {
+            const bookingsContainer = document.getElementById('bookingsContainer');
+            if (!bookingsContainer) return;
+            
+            const currentUser = getCurrentUser();
+            const bookings = getAllBookings();
+            const events = getAllEvents();
+            
+            const userBookings = bookings.filter(b => b.userId === currentUser.id);
+            
+            if (userBookings.length === 0) {
+                bookingsContainer.innerHTML = `
+                    <div class="alert alert-info">
+                        <h5 class="alert-heading">No bookings yet!</h5>
+                        <p>You haven't made any bookings yet. Start exploring events to book your first experience.</p>
+                        <hr>
+                        <a href="events.html" class="btn btn-primary">Browse Events</a>
+                    </div>
+                `;
+                return;
+            }
+            
+            bookingsContainer.innerHTML = userBookings.map(booking => {
+                const event = events.find(e => e.id === booking.eventId) || {};
+                
+                return `
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <h5 class="card-title fw-bold">${booking.eventTitle}</h5>
+                                    <div class="row mb-3">
+                                        <div class="col-md-6">
+                                            <p class="mb-1"><strong>Booking ID:</strong> ${booking.transactionId}</p>
+                                            <p class="mb-1"><strong>Booking Date:</strong> ${new Date(booking.bookingDate).toLocaleDateString()}</p>
+                                            <p class="mb-1"><strong>Status:</strong> 
+                                                <span class="badge ${booking.status === 'confirmed' ? 'bg-success' : 'bg-warning'}">
+                                                    ${booking.status}
+                                                </span>
+                                            </p>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p class="mb-1"><strong>Event Date:</strong> ${event.date ? formatDate(event.date) : 'N/A'}</p>
+                                            <p class="mb-1"><strong>Time:</strong> ${event.time || 'N/A'}</p>
+                                            <p class="mb-1"><strong>Location:</strong> ${event.location || 'N/A'}</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="mb-3">
+                                        <strong>Selected Seats:</strong>
+                                        <div class="d-flex flex-wrap gap-2 mt-1">
+                                            ${booking.seats.map(seat => `
+                                                <span class="badge bg-primary">
+                                                    ${seat.id} (${seat.type})
+                                                </span>
+                                            `).join('')}
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="d-flex align-items-center">
+                                        <strong class="me-2">Total Amount:</strong>
+                                        <span class="h5 text-primary mb-0">${formatCurrency(booking.totalAmount)}</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 border-start d-flex flex-column justify-content-between">
+                                    <div>
+                                        <p class="mb-1"><strong>Payment Method:</strong></p>
+                                        <p class="mb-3">${booking.paymentMethod}</p>
+                                    </div>
+                                    <div class="d-grid gap-2">
+                                        <button class="btn btn-outline-primary" onclick="viewReceipt('${booking.id}')">
+                                            <i class="bi bi-receipt me-1"></i>View Receipt
+                                        </button>
+                                        <a href="${event.id ? 'event-detail.html?id=' + event.id : 'events.html'}" class="btn btn-outline-secondary">
+                                            <i class="bi bi-calendar-event me-1"></i>Event Details
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+        
+        function viewReceipt(bookingId) {
+            const bookings = getAllBookings();
+            const booking = bookings.find(b => b.id == bookingId);
+            
+            if (!booking) {
+                showAlert('Booking not found', 'danger');
+                return;
+            }
+            
+            // Populate receipt content
+            document.getElementById('receiptContent').innerHTML = generateReceiptHTML(booking);
+            
+            // Set up download button
+            document.getElementById('downloadReceiptBtn').onclick = () => downloadReceipt(booking);
+            
+            // Set up email button
+            document.getElementById('emailReceiptBtn').onclick = () => emailReceipt(booking);
+            
+            // Show modal
+            const receiptModal = new bootstrap.Modal(document.getElementById('receiptModal'));
+            receiptModal.show();
+        }
+    </script>
+</body>
+</html>
