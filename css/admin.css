@@ -1,0 +1,135 @@
+/* Admin Panel Styles */
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 56px;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    padding: 48px 0 0;
+    box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+}
+
+.sidebar .nav-link {
+    color: #333;
+    padding: 12px 24px;
+    border-left: 3px solid transparent;
+}
+
+.sidebar .nav-link:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    color: var(--primary-color);
+}
+
+.sidebar .nav-link.active {
+    color: var(--primary-color);
+    background-color: rgba(67, 97, 238, 0.1);
+    border-left-color: var(--primary-color);
+}
+
+.sidebar .nav-link i {
+    width: 20px;
+}
+
+/* Main content */
+main {
+    padding-top: 48px;
+}
+
+/* Stats cards */
+.card {
+    border: none;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.card.bg-primary {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #3a0ca3 100%) !important;
+}
+
+.card.bg-success {
+    background: linear-gradient(135deg, #4bb543 0%, #2e7d32 100%) !important;
+}
+
+.card.bg-warning {
+    background: linear-gradient(135deg, #ff9e00 0%, #ff6f00 100%) !important;
+}
+
+.card.bg-info {
+    background: linear-gradient(135deg, #4cc9f0 0%, #4361ee 100%) !important;
+}
+
+/* Tables */
+.table th {
+    border-top: none;
+    font-weight: 600;
+    color: #6c757d;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.table td {
+    vertical-align: middle;
+}
+
+/* Badges */
+.badge {
+    padding: 0.4em 0.8em;
+    font-weight: 500;
+}
+
+/* Action buttons */
+.btn-action {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+}
+
+/* Modal styles */
+.modal-header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.modal-title {
+    font-weight: 600;
+}
+
+/* Form controls in admin */
+.form-control, .form-select {
+    border: 1px solid #dee2e6;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(67, 97, 238, 0.25);
+}
+
+/* Switch toggle */
+.form-check-input:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* Chart containers */
+canvas {
+    max-width: 100%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .sidebar {
+        position: static;
+        height: auto;
+        padding-top: 0;
+    }
+    
+    main {
+        padding-top: 0;
+    }
+    
+    .sidebar .nav-link {
+        padding: 10px 15px;
+    }
+}

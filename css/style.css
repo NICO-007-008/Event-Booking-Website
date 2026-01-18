@@ -1,0 +1,298 @@
+/* Main Styles for Event Booking Website */
+
+:root {
+    --primary-color: #4361ee;
+    --secondary-color: #3f37c9;
+    --accent-color: #4cc9f0;
+    --light-color: #f8f9fa;
+    --dark-color: #212529;
+    --success-color: #4bb543;
+    --danger-color: #e63946;
+    --warning-color: #ff9e00;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fc;
+    color: #333;
+    padding-top: 56px;
+}
+
+/* Navigation */
+.navbar-brand {
+    font-weight: 700;
+    color: var(--primary-color) !important;
+}
+
+.navbar {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: white;
+    padding: 5rem 0;
+    margin-bottom: 2rem;
+}
+
+/* Event Cards */
+.event-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    overflow: hidden;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+.event-card-img {
+    height: 200px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.event-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1;
+}
+
+/* Ratings */
+.rating {
+    color: var(--warning-color);
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+.btn-outline-primary {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* Seat Selection */
+.seat-map {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.seat {
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    border-radius: 5px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s;
+}
+
+.seat-available {
+    background-color: #d4edda;
+    color: #155724;
+    border: 2px solid #c3e6cb;
+}
+
+.seat-available:hover {
+    background-color: #c3e6cb;
+}
+
+.seat-selected {
+    background-color: var(--primary-color);
+    color: white;
+    border: 2px solid var(--secondary-color);
+}
+
+.seat-occupied {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 2px solid #f5c6cb;
+    cursor: not-allowed;
+}
+
+.seat-vip {
+    background-color: #fff3cd;
+    color: #856404;
+    border: 2px solid #ffeaa7;
+}
+
+.seat-premium {
+    background-color: #cce5ff;
+    color: #004085;
+    border: 2px solid #b8daff;
+}
+
+.seat-standard {
+    background-color: #d4edda;
+    color: #155724;
+    border: 2px solid #c3e6cb;
+}
+
+/* Payment Methods */
+.payment-method {
+    border: 2px solid #dee2e6;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.payment-method:hover {
+    border-color: var(--primary-color);
+    background-color: rgba(67, 97, 238, 0.05);
+}
+
+.payment-method.selected {
+    border-color: var(--primary-color);
+    background-color: rgba(67, 97, 238, 0.1);
+}
+
+.payment-icon {
+    font-size: 1.5rem;
+    margin-right: 10px;
+}
+
+/* Receipt */
+.receipt {
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.receipt-header {
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+}
+
+.receipt-item {
+    padding: 10px 0;
+    border-bottom: 1px solid #dee2e6;
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark-color);
+}
+
+footer a:hover {
+    color: var(--accent-color) !important;
+}
+
+/* Login/Register Forms */
+.auth-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.auth-card {
+    border: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 3rem 0;
+        text-align: center;
+    }
+    
+    .seat {
+        width: 35px;
+        height: 35px;
+        margin: 3px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Loading Spinner */
+.spinner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+}
+
+/* Alert Messages */
+.alert-auto-dismiss {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    z-index: 1050;
+    min-width: 300px;
+}
+
+/* Step indicators */
+.step-indicator {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.step-indicator::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: #dee2e6;
+    z-index: 1;
+}
+
+.step {
+    position: relative;
+    z-index: 2;
+    background-color: white;
+    padding: 0 15px;
+}
+
+.step-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #dee2e6;
+    color: #6c757d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 10px;
+    font-weight: bold;
+}
+
+.step.active .step-circle {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.step.completed .step-circle {
+    background-color: var(--success-color);
+    color: white;
+}
